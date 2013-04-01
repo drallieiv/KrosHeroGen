@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr" ng-app="HeroGen">
+<head>
+    <title>Krosmaster Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+    <script src="js/card.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/card.css" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Krosmaster @ Herazade</a>
+            <ul class="nav">
+                <li><a href="#">View</a></li>
+                <li class="active"><a href="#">HeroGen</a></li>
+                <li><a href="#">Ladder</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Krosmaster Hero Generator <small>l'éditeur de personnages Krosmaster</small></h1>
+        </div>
+        <div class="row-fluid">
+            <div class="span1"></div>
+            <div class="span10">
+                <div id="CardController" class="row-fluid" ng-controller="CardController">
+                    <div class="span5" id="cardViewZone">
+                        <!-- Card View -->
+                        <div class="card">
+                            <div class="name">{{hero.name}}</div>
+                            <div class="name nameShadow">{{hero.name}}</div>
+                            <div class="classes">{{hero.class}}</div>
+                            <div class="lvl lvl{{hero.lvl}}"></div>
+
+                            <div class="face" image-style="hero.face"></div>
+
+                        </div>
+                    </div>
+                    <div class="span5" id="cardEditZone">
+                        <!-- Card Editor -->
+                        <form id="cardForm" class="edit form-inline">
+                            <legend>Détail du Héros</legend>
+                            <label class="aligned" for="name">Nom </label>
+                            <input type="text" id="name" class="input-large" ng-model="hero.name" placeholder="Nom du Perso"><br/>
+
+                            <label for="class">Classe</label>
+                             <input type="text" id="class" class="input-medium" ng-model="hero.class" placeholder="Classe">
+
+                            <label for="lvl">Lvl </label>
+                            <select id="lvl" class="input-mini" ng-model="hero.lvl">
+                                <option ng-repeat="i in [1, 2, 3, 4, 5, 6]">{{i}}</option>
+                            </select><br/>
+
+                            <legend>Illustration</legend>
+                            <label class="aligned" for="imgUrl">url </label><input type="text" id="imgUrl" class="input-large" style="font-size: .8em" ng-model="hero.face.url"><br/>
+                            <label class="aligned" for="zoom">zoom</label>
+                            <div class="input-append">
+                                <input type="text" id="zoom" class="input-min" ng-model="hero.face.zoom">
+                                <span class="add-on">%</span>
+                            </div>
+                            <label for="offX">x</label>
+                            <div class="input-append">
+                                <input type="text" id="offX" class="input-min" ng-model="hero.face.offX">
+                                <span class="add-on">px</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="text" id="offY" class="input-min" ng-model="hero.face.offY">
+                                <span class="add-on">px</span>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" ng-click="saveJson()">Exporter</button>
+                                <button type="submit" class="btn btn-primary" ng-click="loadJson()">Importer</button>
+                                <textarea id="jsonImport" rows="5" class="small mtop" style="width:100%" ng-model="jsonData">Data</textarea>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span10">
+                        <br/>
+                    </div>
+                </div>
+            </div>
+            <div class="span1"></div>
+        </div>
+
+</div>
+</body>
+</html>

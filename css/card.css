@@ -1,0 +1,86 @@
+@font-face{
+	font-family: Berlin;
+	font-weight: bold;
+	src: url(../fonts/berlin-sans-fb-demi-bold.ttf) format("truetype");
+}
+
+.small{
+	font-size: 10px;
+}
+
+.mtop{
+	margin-top: 10px;
+}
+
+div.card{
+	position:relative;
+	background-image: url('../img/front.png');
+	width: 311px;
+	height: 434px;
+}
+
+div.card .name{
+	position: absolute;
+	top: 14px;
+	left: 15px;
+	
+	font-family: Berlin;  
+	font-weight: bold;
+	font-size: 19px;  
+
+	text-transform:uppercase;
+
+	background: -webkit-linear-gradient(#FFE, #F70);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	z-index: 2;
+}
+
+div.card .nameShadow{
+	color: #F70;
+	text-shadow: 0px 0px 5px #000;
+	z-index: 1;
+}
+
+div.card .classes{
+	position: absolute;
+	top: 35px;
+	left: 17px;
+	font-size: 9px;
+	font-weight: bold;
+}
+
+div.card .lvl{
+	position: absolute;
+	top: 14px;
+	right: 11px;
+	width: 37px;
+	height: 36px;
+	background: transparent url(../img/lvl_tile.png);
+	z-index: 10;
+}
+
+div.card .lvl1{	background: url(../img/lvl_tile.png) 0 0 no-repeat;}
+div.card .lvl2{	background: url(../img/lvl_tile.png) -37px 0 no-repeat;}
+div.card .lvl3{	background: url(../img/lvl_tile.png) -74px 0 no-repeat;}
+div.card .lvl4{	background: url(../img/lvl_tile.png) -111px 0 no-repeat;}
+div.card .lvl5{	background: url(../img/lvl_tile.png) -148px 0 no-repeat;}
+div.card .lvl6{	background: url(../img/lvl_tile.png) -185px 0 no-repeat;}
+
+div.card .face{
+	position: absolute;
+	width: 130px;
+	height: 150px;
+	right: 0;
+	background-repeat: no-repeat;
+}
+
+label.aligned{
+ 	width:45px;
+	margin-bottom: 10px;
+}
+label{
+	margin-right:5px;
+}
+input.input-min{ width:24px;}
+
