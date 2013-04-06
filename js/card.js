@@ -5,7 +5,10 @@ function CardController($scope) {
 	    lvl: 4,
 	    class: (["Enutrof", "Dev"]).join(" - "),
 	    init: 7,
-	    face: {url:"http://127.0.0.1:8000/uploaded/MaliBouh.png", zoom:"136", offX:"-23", offY:"5"},
+	    MP: 3,
+	    HP: 8,
+	    AP: 6,
+	    face: {url:"http://krosmaster.herazade.com/HG/uploaded/MaliBouh.png", zoom:"136", offX:"-23", offY:"5"},
   	};
 
   	$scope.saveJson = function(){

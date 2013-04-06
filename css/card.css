@@ -4,6 +4,12 @@
 	src: url(../fonts/berlin-sans-fb-demi-bold.ttf) format("truetype");
 }
 
+@font-face{
+	font-family: HelveticaNeue;
+	font-weight: bold;
+	src: url(../fonts/HelveticaNeueLTStd-BdCn.otf) format("opentype");
+}
+
 .small{
 	font-size: 10px;
 }
@@ -15,6 +21,7 @@
 div.card{
 	position:relative;
 	background-image: url('../img/front.png');
+	background-size: 311px 434px;
 	width: 311px;
 	height: 434px;
 }
@@ -29,11 +36,14 @@ div.card .name{
 	font-size: 19px;  
 
 	text-transform:uppercase;
+  color: #fff;
+  text-shadow: 0px 1.5px 2px #395858, 0px -1.5px 2px #395858, 1.5px 0px 2px #395858, -1.5px 0px 2px #395858; 
 
-	background: -webkit-linear-gradient(#FFE, #F70);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 	z-index: 2;
+}
+
+div.card .name.unique{
+   color: rgb(255, 180, 70);;
 }
 
 div.card .nameShadow{
@@ -74,6 +84,67 @@ div.card .face{
 	right: 0;
 	background-repeat: no-repeat;
 }
+
+#stats{
+  top: 50px;
+  left: 10px;
+  width: 195px;
+  height: 80px;
+  position: absolute;
+}
+
+#init{
+  position: absolute;
+  text-align: center;
+  width: 20px;
+  top: 60px;
+  left: 13px;
+}
+#stats #PM, #stats #PV, #stats #PA{
+  position: relative;
+  width: 61px;
+  top: 36px;
+  text-align: center;
+  float: left;
+}
+
+#stats #PM{
+  text-shadow: 0px 1px 3px #537d26, 0px -1px 3px #537d26, 1px 0px 3px #537d26, -1px 0px 3px #537d26;
+}
+#stats #PV{
+  text-shadow: 0px 1px 3px #cc172f, 0px -1px 3px #cc172f, 1px 0px 3px #cc172f, -1px 0px 3px #cc172f;
+}
+#stats #PA{
+  text-shadow: 0px 1px 3px #095b95, 0px -1px 3px #095b95, 1px 0px 3px #095b95, -1px 0px 3px #095b95;
+}
+
+#stats label{
+  margin-top: -5px;
+  margin-left: 5px;
+}
+
+.wnum{
+  color: #fff;
+  font-family: HelveticaNeue;  
+  font-weight: bold;  
+  text-shadow: 0px 1px 1px rgb(200, 115, 20),0px -1px 1px rgb(200, 115, 20),1px 0px 1px rgb(200, 115, 20),-1px 0px 1px rgb(200, 115, 20);
+}
+
+.bnum{
+  color: #fff;
+  font-family: HelveticaNeue;  
+  font-weight: bold;  
+  font-size: 35px;
+}
+
+.snum{
+  color: #fff;
+  font-family: HelveticaNeue;  
+  font-weight: bold;  
+  font-size: 10px;
+}
+
+/* EDIT PART */
 
 label.aligned{
  	width:45px;
